@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Mong Ha Pong Mueng Ror</title>
+</head>
+<body>
+  <h1>Mong Ha Pong Mueng Ror</h1>
+  <p>ยินดีต้อนรับสู่เว็บไซต์ของฉัน</p>
+
+  <?php
+    if (strstr($_SERVER['REQUEST_URI'], '/database')) {
+      // เปิดลิงก์ YouTube
+      echo '<script>window.location.href = "https://youtu.be/dQw4w9WgXcQ?si=zKAbckyyRtosuN1l";</script>';
+    }
+  ?>
+</body>
+</html>
