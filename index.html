@@ -1,18 +1,75 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mong Ha Pong Mueng Ror</title>
+  <title>Progress Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .bar-bg {
+      width: 100%;
+      height: 20px;
+      background-color: #ddd;
+    }
+    #p-width {
+      height: 20px;
+      background-color: #4caf50;
+      width: 0;
+    }
+    .step-button {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      background-color: #ccc;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Mong Ha Pong Mueng Ror</h1>
-  <p>ยินดีต้อนรับสู่เว็บไซต์ของฉัน</p>
 
-  <?php
-    if (strstr($_SERVER['REQUEST_URI'], '/database')) {
-      // เปิดลิงก์ YouTube
-      echo '<script>window.location.href = "https://youtu.be/dQw4w9WgXcQ?si=zKAbckyyRtosuN1l";</script>';
-    }
-  ?>
+  <h1 id="progress">Steps Completed 0/10</h1>
+
+  <div class="bar-bg">
+    <div id="p-width"></div>
+  </div>
+
+  <br>
+
+  <input type="file" id="file" disabled>
+
+  <br><br>
+
+  <i id="10" class="fa fa-lock"></i> <!-- จะเปลี่ยนเป็น unlock ด้วย JS -->
+
+  <br><br>
+
+  <!-- ปุ่มทั้ง 10 -->
+  <div id="buttons">
+    <button class="step-button" id="subscribe">Subscribe</button>
+    <button class="step-button" id="fbfollow">Facebook Follow</button>
+    <button class="step-button" id="instalike">Instagram Like</button>
+    <button class="step-button" id="youtubelike">YouTube Like</button>
+    <button class="step-button" id="secondsubscribe">Second Subscribe</button>
+    <button class="step-button" id="instafollow">Instagram Follow</button>
+    <button class="step-button" id="telegramjoin">Join Telegram</button>
+    <button class="step-button" id="discordjoin">Join Discord</button>
+    <button class="step-button" id="ytshare">Share on YouTube</button>
+    <button class="step-button" id="joinwhatsapp">Join WhatsApp</button>
+  </div>
+
+  <script>
+    [c, d, e, f, g, h, i, j, k, l].forEach((v, i) => window[String.fromCharCode(99 + i)] = 1)
+    var pcomp = 10
+    document.getElementById('progress').innerHTML = `Steps Completed ${pcomp}/10`
+    document.getElementById('p-width').style.width = `${(pcomp * 100) / 10}%`
+    document.getElementById('file').disabled = false
+    document.getElementById("10").className = "fa fa-unlock"
+    [
+      "subscribe", "fbfollow", "instalike", "youtubelike", "secondsubscribe", 
+      "instafollow", "telegramjoin", "discordjoin", "ytshare", "joinwhatsapp"
+    ].forEach(id => document.getElementById(id).style.background = "green")
+  </script>
+
 </body>
 </html>
